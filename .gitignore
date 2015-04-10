@@ -25,3 +25,9 @@ proguard/
 
 # Log Files
 *.log
+
+node_modules/
+temp/
+*.DS_Store
+*.log
+*.swp
