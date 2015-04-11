@@ -1,6 +1,6 @@
 angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifyme.services'])
 
-    .run(function ($rootScope, $state, $ionicPlatform, $window, $cordovaPush, $http, Commons) {
+    .run(function ($rootScope, $state, $ionicPlatform, $window, $cordovaPush, $http, Commons, Feeds) {
 
         var androidConfig = {
             "senderID": "341139902696"
@@ -9,19 +9,25 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
         var AIRBOP_APP_KEY = Commons.getAirbopAppKey();
         var AIRBOP_APP_SECRET = Commons.getAirbopAppSecret();
 
-        $ionicPlatform.ready(function () {
-            // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-            // for form inputs)
-            if (window.cordova && window.cordova.plugins.Keyboard) {
-                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-            }
-            if (window.StatusBar) {
-                // org.apache.cordova.statusbar required
-                StatusBar.styleDefault();
-            }
-        });
+        function initialize() {
+            var feed = new google.feeds.Feed(Commons.getBlogUrl());
+
+            feed.load(function(result) {
+                //$ionicLoading.hide();
+                if(!result.error) {
+                    Feeds.set(result.feed.entries);
+                    alert(JSON.stringify(Feeds.all()));
+                } else {
+                    console.log("Error - "+result.error.message);
+                }
+            });
+
+        }
 
         document.addEventListener("deviceready", function () {
+
+            // read the rss feeds
+            google.load("feeds", "1", {callback:initialize});
 
             $cordovaPush.register(androidConfig).then(function (result) {
                 // Success
@@ -107,7 +113,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 url: "/dashboard",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/dashboard.html"
+                        templateUrl: "templates/dashboard.html",
+                        controller: 'AppCtrl'
                     }
                 }
             })

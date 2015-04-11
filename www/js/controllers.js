@@ -1,8 +1,14 @@
 angular.module('starter.controllers', [])
 
-    .controller('AppCtrl', function ($scope, $ionicModal, $timeout, Commons) {
+    .controller('AppCtrl', function ($scope, $ionicModal, $timeout, Commons, Feeds) {
         // Form data for the login modal
         $scope.loginData = {};
+
+        $scope.entries = Feeds.all();
+        $scope.doRefresh = function() {
+            $scope.entries = Feeds.all();
+            $scope.$broadcast('scroll.refreshComplete');
+        }
 
         // Create the login modal that we will use later
         $ionicModal.fromTemplateUrl('templates/login.html', {

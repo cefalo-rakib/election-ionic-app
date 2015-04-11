@@ -21,6 +21,9 @@ angular.module('notifyme.services', [])
             getAirbopRegUrl : function () {
                 return 'http://www.airbop.com/api/v1/register';
             },
+            getBlogUrl : function () {
+                return 'https://rsnishorgo.wordpress.com/feed/';
+            },
             getAirbopAppKey : function() {
                 return '0486ff8d-ab01-477f-8467-63132d0cd1c8';
             },
@@ -40,7 +43,7 @@ angular.module('notifyme.services', [])
                 return JSON.parse($window.localStorage[keyName] || '[]');
             },
             setLocalStorageMapValue: function(keyName, keyValue) {
-                $window.localStorage['feeds'] = JSON.stringify(keyValue);
+                $window.localStorage[keyName] = JSON.stringify(keyValue);
             },
 
             getLocalStorageMapAsString: function(keyName) {
@@ -57,6 +60,9 @@ angular.module('notifyme.services', [])
             all: function () {
                 var feedsLoaded = JSON.parse($window.localStorage['feeds'] || '[]');
                 return feedsLoaded;
+            },
+            set: function (feeds) {
+                $window.localStorage['feeds'] = JSON.stringify(feeds);
             },
             getFeed: function (notificationId) {
                 var feeds = JSON.parse($window.localStorage['feeds'] || '[]');
