@@ -46,7 +46,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                             });
                             var timestamp = Math.round(new Date() / 1000);
                             var signature = CryptoJS.SHA256("POST" + request_uri + AIRBOP_APP_KEY
-                                                        + timestamp + request_body + AIRBOP_APP_SECRET);
+                            + timestamp + request_body + AIRBOP_APP_SECRET);
 
                             $http({
                                 'method': 'POST',
@@ -103,42 +103,146 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 controller: 'AppCtrl'
             })
 
-            .state('app.search', {
-                url: "/search",
+            .state('app.dashboard', {
+                url: "/dashboard",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/search.html"
+                        templateUrl: "templates/dashboard.html"
                     }
                 }
             })
 
-            .state('app.browse', {
-                url: "/browse",
+            // menu for north
+            .state('app.dcc-north', {
+                url: "/dcc-north",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/browse.html"
+                        templateUrl: "templates/dcc-north-profile.html"
                     }
                 }
             })
-            .state('app.playlists', {
-                url: "/playlists",
+            .state('app.dcc-north-profile', {
+                url: "/dcc-north-profile",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/playlists.html",
-                        controller: 'PlaylistsCtrl'
+                        templateUrl: "templates/dcc-north-profile.html"
+                    }
+                }
+            })
+            .state('app.dcc-north-manifesto', {
+                url: "/dcc-north-manifesto",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/dcc-north-manifesto.html"
+                    }
+                }
+            })
+            .state('app.dcc-north-map', {
+                url: "/dcc-north-map",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/dcc-north-map.html"
+                    }
+                }
+            })
+            .state('app.dcc-north-vote-facts', {
+                url: "/dcc-north-vote-facts",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/dcc-north-vote-facts.html"
                     }
                 }
             })
 
-            .state('app.single', {
-                url: "/playlists/:playlistId",
+            //menu for south
+            .state('app.dcc-south', {
+                url: "/dcc-south",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/playlist.html",
-                        controller: 'PlaylistCtrl'
+                        templateUrl: "templates/dcc-south-profile.html"
+                    }
+                }
+            })
+            .state('app.dcc-south-profile', {
+                url: "/dcc-south-profile",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/dcc-south-profile.html"
+                    }
+                }
+            })
+            .state('app.dcc-south-manifesto', {
+                url: "/dcc-south-manifesto",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/dcc-south-manifesto.html"
+                    }
+                }
+            })
+            .state('app.dcc-south-map', {
+                url: "/dcc-south-map",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/dcc-south-map.html"
+                    }
+                }
+            })
+            .state('app.dcc-south-vote-facts', {
+                url: "/dcc-south-vote-facts",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/dcc-south-vote-facts.html"
+                    }
+                }
+            })
+
+
+            .state('app.ideal-dhaka', {
+                url: "/ideal-dhaka",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/ideal-dhaka.html"
+                    }
+                }
+            })
+
+            // right menu
+            .state('app.unsubscribe', {
+                url: "/unsubscribe",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/subscription.html"
+                    }
+                }
+            })
+
+            .state('app.contact', {
+                url: "/contact",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/contact.html"
+                    }
+                }
+            })
+
+            .state('app.abbas-fb-page', {
+                url: "/abbas-fb-page",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/abbas-fb-page.html"
+                    }
+                }
+            })
+
+            .state('app.tabid-fb-page', {
+                url: "/tabid-fb-page",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/abbas-fb-page.html"
                     }
                 }
             });
+
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/app/playlists');
+        $urlRouterProvider.otherwise('/app/dashboard');
     });

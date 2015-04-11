@@ -45,6 +45,7 @@
 		30D256961807454AA4FBFDE5 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = A1883689400B46669CD46406 /* CDVDevice.m */; };
 		FBC8A10688B04CFC977F28BC /* AppDelegate+notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6937D8DE82494388618679 /* AppDelegate+notification.m */; };
 		C6A0170E4D0F43BF82DBE91F /* PushPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE4F4E155204251A8D2E91A /* PushPlugin.m */; };
+		ECD83641BB124C99A93BFDE2 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D831D54DC474B0480EAB6BA /* CDVInAppBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,8 @@
 		6BE4F4E155204251A8D2E91A /* PushPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "PushPlugin.m"; path = "com.phonegap.plugins.PushPlugin/PushPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		7D0E1D2EBC1748FB9939D08D /* AppDelegate+notification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate+notification.h"; path = "com.phonegap.plugins.PushPlugin/AppDelegate+notification.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		B7FF3A68ABF54CB1AA1BBB4A /* PushPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PushPlugin.h"; path = "com.phonegap.plugins.PushPlugin/PushPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		4D831D54DC474B0480EAB6BA /* CDVInAppBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVInAppBrowser.m"; path = "org.apache.cordova.inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		6C1BA376C90B4414865A21EA /* CDVInAppBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVInAppBrowser.h"; path = "org.apache.cordova.inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +235,8 @@
 				6BE4F4E155204251A8D2E91A /* PushPlugin.m */,
 				7D0E1D2EBC1748FB9939D08D /* AppDelegate+notification.h */,
 				B7FF3A68ABF54CB1AA1BBB4A /* PushPlugin.h */,
+				4D831D54DC474B0480EAB6BA /* CDVInAppBrowser.m */,
+				6C1BA376C90B4414865A21EA /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
 			path = "election-ionic-app/Plugins";
@@ -422,6 +427,7 @@
 				30D256961807454AA4FBFDE5 /* CDVDevice.m in Sources */,
 				FBC8A10688B04CFC977F28BC /* AppDelegate+notification.m in Sources */,
 				C6A0170E4D0F43BF82DBE91F /* PushPlugin.m in Sources */,
+				ECD83641BB124C99A93BFDE2 /* CDVInAppBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
