@@ -16,7 +16,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 //$ionicLoading.hide();
                 if(!result.error) {
                     Feeds.set(result.feed.entries);
-                    alert(JSON.stringify(Feeds.all()));
+                    console.log("Success");
                 } else {
                     console.log("Error - "+result.error.message);
                 }

@@ -37,6 +37,10 @@ angular.module('starter.controllers', [])
                 $scope.closeLogin();
             }, 1000);
         };
+
+        $scope.openUrl = function(feedUrl){
+            window.open(feedUrl, '_blank', 'location=no', 'closebuttoncaption=Done');
+        }
     })
 
     .controller('PlaylistsCtrl', function ($scope) {
