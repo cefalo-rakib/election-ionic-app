@@ -114,7 +114,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 views: {
                     'menuContent': {
                         templateUrl: "templates/dashboard.html",
-                        controller: 'AppCtrl'
+                        controller: 'DashboardCtrl'
                     }
                 }
             })
@@ -124,7 +124,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 url: "/dcc-north",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/dcc-north-profile.html"
+                        templateUrl: "templates/dcc-north-profile.html",
+                        controller: 'DccNorthCtrl'
                     }
                 }
             })
@@ -132,7 +133,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 url: "/dcc-north-profile",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/dcc-north-profile.html"
+                        templateUrl: "templates/dcc-north-profile.html",
+                        controller: 'DccNorthProfileCtrl'
                     }
                 }
             })
@@ -140,7 +142,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 url: "/dcc-north-manifesto",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/dcc-north-manifesto.html"
+                        templateUrl: "templates/dcc-north-manifesto.html",
+                        controller: 'DccNorthManifestoCtrl'
                     }
                 }
             })
@@ -148,7 +151,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 url: "/dcc-north-map",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/dcc-north-map.html"
+                        templateUrl: "templates/dcc-north-map.html",
+                        controller: 'DccNorthMapCtrl'
                     }
                 }
             })
@@ -156,7 +160,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 url: "/dcc-north-vote-facts",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/dcc-north-vote-facts.html"
+                        templateUrl: "templates/dcc-north-vote-facts.html",
+                        controller: 'DccNorthVoteCtrl'
                     }
                 }
             })
@@ -166,7 +171,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 url: "/dcc-south",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/dcc-south-profile.html"
+                        templateUrl: "templates/dcc-south-profile.html",
+                        controller: 'DccSouthCtrl'
                     }
                 }
             })
@@ -174,7 +180,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 url: "/dcc-south-profile",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/dcc-south-profile.html"
+                        templateUrl: "templates/dcc-south-profile.html",
+                        controller: 'DccSouthProfileCtrl'
                     }
                 }
             })
@@ -182,7 +189,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 url: "/dcc-south-manifesto",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/dcc-south-manifesto.html"
+                        templateUrl: "templates/dcc-south-manifesto.html",
+                        controller: 'DccSouthManifestoCtrl'
                     }
                 }
             })
@@ -190,7 +198,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 url: "/dcc-south-map",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/dcc-south-map.html"
+                        templateUrl: "templates/dcc-south-map.html",
+                        controller: 'DccSouthMapCtrl'
                     }
                 }
             })
@@ -198,7 +207,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 url: "/dcc-south-vote-facts",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/dcc-south-vote-facts.html"
+                        templateUrl: "templates/dcc-south-vote-facts.html",
+                        controller: 'DccSouthVoteCtrl'
                     }
                 }
             })
@@ -208,7 +218,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 url: "/ideal-dhaka",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/ideal-dhaka.html"
+                        templateUrl: "templates/ideal-dhaka.html",
+                        controller: 'IdealDhakaIntroCtrl'
                     }
                 }
             })
@@ -218,7 +229,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 url: "/unsubscribe",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/subscription.html"
+                        templateUrl: "templates/subscription.html",
+                        controller: 'SubscriptionCtrl'
                     }
                 }
             })
@@ -227,7 +239,18 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 url: "/contact",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/contact.html"
+                        templateUrl: "templates/contact.html",
+                        controller: 'ContactCtrl'
+                    }
+                }
+            })
+
+            .state('app.contact', {
+                url: "/contact",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/contact.html",
+                        controller: 'KnowDhakaCtrl'
                     }
                 }
             })
@@ -236,7 +259,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 url: "/abbas-fb-page",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/abbas-fb-page.html"
+                        templateUrl: "templates/abbas-fb-page.html",
+                        controller: 'MAFBCtrl'
                     }
                 }
             })
@@ -245,7 +269,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                 url: "/tabid-fb-page",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/abbas-fb-page.html"
+                        templateUrl: "templates/abbas-fb-page.html",
+                        controller: 'TAFBCtrl'
                     }
                 }
             });

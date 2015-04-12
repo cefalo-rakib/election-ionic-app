@@ -22,7 +22,7 @@ angular.module('notifyme.services', [])
                 return 'http://www.airbop.com/api/v1/register';
             },
             getBlogUrl : function () {
-                return 'https://rsnishorgo.wordpress.com/feed/';
+                return 'https://idealdhaka.wordpress.com/feed/';
             },
             getAirbopAppKey : function() {
                 return '0486ff8d-ab01-477f-8467-63132d0cd1c8';

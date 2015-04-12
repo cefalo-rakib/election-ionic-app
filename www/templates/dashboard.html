@@ -10,10 +10,9 @@
             <div collection-repeat="entry in entries" ng-model="entries">
                 <div class="list card">
                     <div class="item item-divider">
-                        <h2>{{entry.title}}</h2>
                     </div>
                     <div class="item item-body">
-                        <p>{{entry.content}}</p>
+                        <h2>{{entry.title}}</h2>
                     </div>
                     <div class="item item-divider">
                         <button class="button button-block button-dark" ng-click="openUrl(entry.link)">

@@ -4,11 +4,6 @@ angular.module('starter.controllers', [])
         // Form data for the login modal
         $scope.loginData = {};
 
-        $scope.entries = Feeds.all();
-        $scope.doRefresh = function() {
-            $scope.entries = Feeds.all();
-            $scope.$broadcast('scroll.refreshComplete');
-        }
 
         // Create the login modal that we will use later
         $ionicModal.fromTemplateUrl('templates/login.html', {
@@ -38,21 +33,68 @@ angular.module('starter.controllers', [])
             }, 1000);
         };
 
+    })
+
+    .controller('DashboardCtrl', function ($scope, $stateParams) {
+        $scope.entries = Feeds.all();
+
+        $scope.doRefresh = function() {
+            $scope.entries = Feeds.all();
+            $scope.$broadcast('scroll.refreshComplete');
+        }
+
         $scope.openUrl = function(feedUrl){
             window.open(feedUrl, '_blank', 'location=no', 'closebuttoncaption=Done');
         }
     })
 
-    .controller('PlaylistsCtrl', function ($scope) {
-        $scope.playlists = [
-            {title: 'Reggae', id: 1},
-            {title: 'Chill', id: 2},
-            {title: 'Dubstep', id: 3},
-            {title: 'Indie', id: 4},
-            {title: 'Rap', id: 5},
-            {title: 'Cowbell', id: 6}
-        ];
+    .controller('DccNorthCtrl', function ($scope, $stateParams) {
     })
 
-    .controller('PlaylistCtrl', function ($scope, $stateParams) {
+    .controller('DccSouthCtrl', function ($scope, $stateParams) {
+    })
+
+    .controller('DccSouthProfileCtrl', function ($scope, $stateParams) {
+    })
+
+    .controller('DccNorthProfileCtrl', function ($scope, $stateParams) {
+    })
+
+    .controller('IdealDhakaCtrl', function ($scope, $stateParams) {
+    })
+
+    .controller('DccNorthManifestoCtrl', function ($scope, $stateParams) {
+    })
+
+    .controller('DccSouthManifestoCtrl', function ($scope, $stateParams) {
+    })
+
+    .controller('DccNorthVoteCtrl', function ($scope, $stateParams) {
+    })
+
+    .controller('DccSouthVoteCtrl', function ($scope, $stateParams) {
+    })
+
+    .controller('DccNorthMapCtrl', function ($scope, $stateParams) {
+    })
+
+    .controller('DccSouthMapCtrl', function ($scope, $stateParams) {
+    })
+
+    .controller('IdealDhakaIntroCtrl', function ($scope, $stateParams) {
+    })
+
+    .controller('SubscriptionCtrl', function ($scope, $stateParams) {
+    })
+
+    .controller('ContactCtrl', function ($scope, $stateParams) {
+    })
+
+    .controller('TAFBCtrl', function ($scope, $stateParams) {
+    })
+
+    .controller('MAFBCtrl', function ($scope, $stateParams) {
+    })
+
+    .controller('KnowDhakaCtrl', function ($scope, $stateParams) {
     });
