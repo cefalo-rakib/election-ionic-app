@@ -13,7 +13,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
             var feed = new google.feeds.Feed(Commons.getBlogUrl());
 
             feed.load(function(result) {
-                //$ionicLoading.hide();
                 if(!result.error) {
                     Feeds.set(result.feed.entries);
                     console.log("Success");
@@ -21,7 +20,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                     console.log("Error - "+result.error.message);
                 }
             });
-
         }
 
         document.addEventListener("deviceready", function () {
@@ -87,15 +85,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                         break;
                 }
             });
-
-
-            // WARNING: dangerous to unregister (results in loss of tokenID)
-            $cordovaPush.unregister(options).then(function (result) {
-                // Success!
-            }, function (err) {
-                // Error
-            })
-
         }, false);
     })
 
@@ -138,6 +127,14 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                     }
                 }
             })
+            .state('app.letter-from-tabith', {
+                url: "/letter-from-tabith",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/letter-from-tabith.html"
+                    }
+                }
+            })
             .state('app.dcc-north-manifesto', {
                 url: "/dcc-north-manifesto",
                 views: {
@@ -147,15 +144,15 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                     }
                 }
             })
-            .state('app.dcc-north-map', {
-                url: "/dcc-north-map",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/dcc-north-map.html",
-                        controller: 'DccNorthMapCtrl'
-                    }
-                }
-            })
+            //.state('app.dcc-north-map', {
+            //    url: "/dcc-north-map",
+            //    views: {
+            //        'menuContent': {
+            //            templateUrl: "templates/dcc-north-map.html",
+            //            controller: 'AppCtrl'
+            //        }
+            //    }
+            //})
             .state('app.dcc-north-vote-facts', {
                 url: "/dcc-north-vote-facts",
                 views: {
@@ -194,15 +191,15 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                     }
                 }
             })
-            .state('app.dcc-south-map', {
-                url: "/dcc-south-map",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/dcc-south-map.html",
-                        controller: 'DccSouthMapCtrl'
-                    }
-                }
-            })
+            //.state('app.dcc-south-map', {
+            //    url: "/dcc-south-map",
+            //    views: {
+            //        'menuContent': {
+            //            templateUrl: "templates/dcc-south-map.html",
+            //            controller: 'AppCtrl'
+            //        }
+            //    }
+            //})
             .state('app.dcc-south-vote-facts', {
                 url: "/dcc-south-vote-facts",
                 views: {
@@ -241,16 +238,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
                     'menuContent': {
                         templateUrl: "templates/contact.html",
                         controller: 'ContactCtrl'
-                    }
-                }
-            })
-
-            .state('app.contact', {
-                url: "/contact",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/contact.html",
-                        controller: 'KnowDhakaCtrl'
                     }
                 }
             })

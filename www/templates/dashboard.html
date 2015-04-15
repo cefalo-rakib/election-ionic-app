@@ -7,20 +7,16 @@
                 on-refresh="doRefresh()">
         </ion-refresher>
 
-            <div collection-repeat="entry in entries" ng-model="entries">
-                <div class="list card">
-                    <div class="item item-divider">
-                    </div>
-                    <div class="item item-body">
-                        <h2>{{entry.title}}</h2>
-                    </div>
-                    <div class="item item-divider">
-                        <button class="button button-block button-dark" ng-click="openUrl(entry.link)">
-                            Read More...
-                        </button>
-                    </div>
-                </div>
+        <div class="list card" collection-repeat="entry in entries" ng-model="entries">
+            <div class="item item-body">
+                <h2>{{entry.title}}</h2>
             </div>
+            <div class="item item-divider">
+                <button class="button button-block button-calm" ng-click="openUrl(entry.link)">
+                    Read More...
+                </button>
+            </div>
+        </div>
 
     </ion-content>
 

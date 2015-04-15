@@ -22,8 +22,27 @@ angular.module('notifyme.services', [])
                 return 'http://www.airbop.com/api/v1/register';
             },
             getBlogUrl : function () {
-                return 'https://idealdhaka.wordpress.com/feed/';
+                return 'https://adorshodhaka.wordpress.com/feed/';
             },
+            getDccNorthMapUrl : function() {
+                return 'http://dncc.gov.bd/dncc-setup/geographical-location-area-of-dncc.html';
+            },
+            getDccSouthMapUrl : function() {
+                return 'http://www.dhakasouthcity.gov.bd/doc/word_n_zone.pdf';
+            },
+            getKnowDhakaUrl : function() {
+                return 'http://bn.banglapedia.org/index.php?title=%E0%A6%A2%E0%A6%BE%E0%A6%95%E0%A6%BE';
+            },
+            getTabithFbUrl : function() {
+                return 'https://www.facebook.com/TabithAwal.ForMayor';
+            },
+            getAbbasFbUrl : function() {
+                return 'https://www.facebook.com/MirzaAbbasOfficial';
+            },
+            getIdealDhakaFbUrl : function() {
+                return 'https://www.facebook.com/AdarshaDhakaAndolon';
+            },
+
             getAirbopAppKey : function() {
                 return '0486ff8d-ab01-477f-8467-63132d0cd1c8';
             },

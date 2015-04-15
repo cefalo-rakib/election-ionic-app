@@ -1,41 +1,33 @@
 angular.module('starter.controllers', [])
 
-    .controller('AppCtrl', function ($scope, $ionicModal, $timeout, Commons, Feeds) {
-        // Form data for the login modal
-        $scope.loginData = {};
-
-
-        // Create the login modal that we will use later
-        $ionicModal.fromTemplateUrl('templates/login.html', {
-            scope: $scope
-        }).then(function (modal) {
-            $scope.modal = modal;
-        });
-
-        // Triggered in the login modal to close it
-        $scope.closeLogin = function () {
-            $scope.modal.hide();
+    .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $window, Commons) {
+        $scope.goDccNorthMap = function() {
+            window.open(Commons.getDccNorthMapUrl(), '_blank', 'location=yes', 'closebuttoncaption=Done');
         };
 
-        // Open the login modal
-        $scope.login = function () {
-            $scope.modal.show();
+        $scope.goDccSouthMap = function() {
+            alert('দয়া করে পিডিএফ ফাইলটি সংরক্ষণকরুন');
+            window.open(Commons.getDccSouthMapUrl(), '_system', 'location=yes', 'closebuttoncaption=Done');
         };
 
-        // Perform the login action when the user submits the login form
-        $scope.doLogin = function () {
-            console.log('Doing login', $scope.loginData);
-
-            // Simulate a login delay. Remove this and replace with your login
-            // code if using a login system
-            $timeout(function () {
-                $scope.closeLogin();
-            }, 1000);
+        $scope.goKnowDhaka = function() {
+            window.open(Commons.getKnowDhakaUrl(), '_blank', 'location=yes', 'closebuttoncaption=Done');
         };
 
+        $scope.goTabithFbPage = function() {
+            window.open(Commons.getTabithFbUrl(), '_system', 'location=yes', 'closebuttoncaption=Done');
+        };
+
+        $scope.goAbbasFbPage = function() {
+            window.open(Commons.getAbbasFbUrl(), '_system', 'location=yes', 'closebuttoncaption=Done');
+        };
+
+        $scope.goIdealDhakaFbPage = function() {
+            window.open(Commons.getIdealDhakaFbUrl(), '_system', 'location=yes', 'closebuttoncaption=Done');
+        };
     })
 
-    .controller('DashboardCtrl', function ($scope, $stateParams) {
+    .controller('DashboardCtrl', function ($scope, $stateParams, Feeds) {
         $scope.entries = Feeds.all();
 
         $scope.doRefresh = function() {
@@ -84,7 +76,16 @@ angular.module('starter.controllers', [])
     .controller('IdealDhakaIntroCtrl', function ($scope, $stateParams) {
     })
 
-    .controller('SubscriptionCtrl', function ($scope, $stateParams) {
+    .controller('SubscriptionCtrl', function ($scope, $stateParams, $cordovaPush) {
+
+        $scope.subscribeNotifications = function() {
+            // WARNING: dangerous to unregister (results in loss of tokenID)
+            $cordovaPush.unregister(options).then(function (result) {
+                alert('আদর্শ ঢাকা আন্দোলনে  আপনাকে আমাদের বিশেষভাবে প্রয়োজন');
+            }, function (err) {
+                console.log('Failed to unregister');
+            })
+        }
     })
 
     .controller('ContactCtrl', function ($scope, $stateParams) {

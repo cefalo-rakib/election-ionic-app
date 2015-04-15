@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.electionionicapp893971" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>election-ionic-app</name>
+  <name>আদর্শ ঢাকা আন্দোলন </name>
   <description>
         An Ionic Framework and Cordova project.
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="shahriar025@gmail.com" href="https://sites.google.com/a/csebuet.org/rshahriar/">
+      একজন জাতীয়তাবাদী প্রকৌশলী 
     </author>
   <content src="index.html"/>
   <access origin="*"/>

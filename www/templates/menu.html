@@ -9,11 +9,6 @@
                 </button>
             </ion-nav-buttons>
 
-            <ion-nav-buttons side="right">
-                <button class="button button-icon button-clear ion-ios-bookmarks-outline" ng-click="">
-                </button>
-            </ion-nav-buttons>
-
             <ion-nav-buttons side="secondary">
                 <button class="button button-icon button-clear ion-information-circled" menu-toggle="right">
                 </button>
@@ -24,34 +19,50 @@
     </ion-side-menu-content>
 
     <ion-side-menu side="left">
-        <ion-header-bar class="bar-stable">
-            <h1 class="title">আদর্শ ঢাকা</h1>
+        <ion-header-bar class="bar-calm">
+            <h1 class="title">  আদর্শ ঢাকা</h1>
         </ion-header-bar>
         <ion-content>
             <ion-list>
                 <ion-item nav-clear menu-close href="#/app/dashboard">
-                    <i class="ion-ios-home-outline">  হোম</i>
+                    <i class="ion-ios-paper-outline">  নিউজফিড</i>
                 </ion-item>
-                <ion-item nav-clear menu-close href="#/app/dcc-north">
+                <ion-item nav-clear menu-close>
                     <p>ঢাকা উত্তর</p>
                     <ion-list>
-                        <ion-item nav-clear menu-close href="#/app/dcc-north-profile">তাবিথ আউয়াল</ion-item>
-                        <ion-item nav-clear menu-close href="#/app/dcc-north-manifesto">নির্বাচনী ইশতেহার</ion-item>
-                        <ion-item nav-clear menu-close href="#/app/dcc-north-vote-facts">নাগরিক অধিকার</ion-item>
-                        <ion-item nav-clear menu-close href="#/app/dcc-north-map">মানচিত্র</ion-item>
+                        <ion-item nav-clear menu-close class="item item-avatar" href="#/app/dcc-north-profile">
+                            <img src="img/tabith-awal.png" height="25" width="25">
+                            তাবিথ আউয়াল
+                        </ion-item>
+                        <ion-item nav-clear menu-close href="#/app/letter-from-tabith">
+                            <i class="ion-paper-airplane">  তাবিথের চিঠি</i>
+                        </ion-item>
+                        <ion-item nav-clear menu-close href="#/app/dcc-north-manifesto">
+                            <i class="ion-android-document">   নির্বাচনী ইশতেহার</i>
+                        </ion-item>
+                        <!--<ion-item nav-clear menu-close href="#/app/dcc-north-vote-facts">নাগরিক অধিকার</ion-item>-->
+                        <ion-item nav-clear menu-close ng-click="goDccNorthMap()">
+                            <i class="ion-map">  এক নজরে ঢাকা উত্তর  </i>
+                        </ion-item>
                     </ion-list>
                 </ion-item>
-                <ion-item nav-clear menu-close href="#/app/dcc-south">
+                <ion-item nav-clear menu-close>
                     <p>ঢাকা দক্ষিণ</p>
                     <ion-list>
-                        <ion-item nav-clear menu-close href="#/app/dcc-south-profile">মির্জা আব্বাস</ion-item>
-                        <ion-item nav-clear menu-close href="#/app/dcc-south-manifesto">নির্বাচনী ইশতেহার</ion-item>
-                        <ion-item nav-clear menu-close href="#/app/dcc-south-vote-facts">নাগরিক অধিকার</ion-item>
-                        <ion-item nav-clear menu-close href="#/app/dcc-south-map">মানচিত্র</ion-item>
+                        <ion-item nav-clear menu-close class="item item-avatar" href="#/app/dcc-south-profile">
+                            <img src="img/Mirza-Abbas.png" height="25" width="25">
+                            মির্জা আব্বাস
+                        </ion-item>
+                        <ion-item nav-clear menu-close href="#/app/dcc-south-manifesto">
+                            <i class="ion-android-document">   নির্বাচনী ইশতেহার</i>
+                        </ion-item>
+                        <!--<ion-item nav-clear menu-close href="#/app/dcc-south-vote-facts">-->
+                            <!--নাগরিক অধিকার-->
+                        <!--</ion-item>-->
+                        <ion-item nav-clear menu-close ng-click="goDccSouthMap()">
+                            <i class="ion-map">  এক নজরে ঢাকা দক্ষিন </i>
+                        </ion-item>
                     </ion-list>
-                </ion-item>
-                <ion-item nav-clear menu-close href="#/app/ideal-dhaka">
-                    আদর্শ ঢাকা আন্দোলন
                 </ion-item>
             </ion-list>
         </ion-content>
@@ -59,19 +70,25 @@
 
 
     <ion-side-menu side="right">
-        <ion-header-bar class="bar-stable">
-            <h1 class="title">ভাগ্যের চাকা</h1>
+        <ion-header-bar class="bar-calm">
+            <h1 class="title">সৌভাগ্যের চাকা</h1>
         </ion-header-bar>
         <ion-content>
             <ion-list>
-                <ion-item nav-clear menu-close href="#/app/subscription">
-                    <i class="ion-android-notifications"> নিউজডেস্ক </i>
+                <ion-item nav-clear menu-close href="#/app/ideal-dhaka">
+                    <i class="ion-ios-people">  আদর্শ ঢাকা আন্দোলন</i>
                 </ion-item>
-                <ion-item nav-clear menu-close href="#/app/know-dhaka">
-                    <i class="ion-ios-information-outline"> প্রিয় ঢাকা </i>
+                <ion-item nav-clear menu-close ng-click="goKnowDhaka()">
+                    <i class="ion-ios-information-outline">  প্রিয় ঢাকা </i>
                 </ion-item>
-                <ion-item nav-clear menu-close href="#/app/tabid-fb-page">
+                <ion-item nav-clear menu-close ng-click="goTabithFbPage()">
                     <i class="ion-social-facebook">  তাবিথ আউয়াল</i>
+                </ion-item>
+                <ion-item nav-clear menu-close ng-click="goAbbasFbPage()">
+                    <i class="ion-social-facebook">  মির্জা আব্বাস</i>
+                </ion-item>
+                <ion-item nav-clear menu-close ng-click="goIdealDhakaFbPage()">
+                    <i class="ion-social-facebook">  আদর্শ ঢাকা আন্দোলন</i>
                 </ion-item>
                 <ion-item nav-clear menu-close href="#/app/contact">
                     <i class="ion-android-contacts">  সাথেই থাকুন</i>
