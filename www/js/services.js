@@ -21,8 +21,11 @@ angular.module('notifyme.services', [])
             getAirbopRegUrl : function () {
                 return 'http://www.airbop.com/api/v1/register';
             },
-            getBlogUrl : function () {
+            getBlogFeedUrl : function () {
                 return 'https://adorshodhaka.wordpress.com/feed/';
+            },
+            getBlogUrl : function () {
+                return 'https://adorshodhaka.wordpress.com';
             },
             getDccNorthMapUrl : function() {
                 return 'http://dncc.gov.bd/dncc-setup/geographical-location-area-of-dncc.html';

@@ -10,7 +10,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
         var AIRBOP_APP_SECRET = Commons.getAirbopAppSecret();
 
         function initialize() {
-            var feed = new google.feeds.Feed(Commons.getBlogUrl());
+            var feed = new google.feeds.Feed(Commons.getBlogFeedUrl());
 
             feed.load(function(result) {
                 if(!result.error) {
@@ -73,7 +73,16 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'notifym
 
                     case 'message':
                         // this is the actual push notification. its format depends on the data model from the push server
-                        alert('message = ' + notification.message + ' msgCount = ' + notification.msgcnt);
+                        //alert('message = ' + notification.message + ' || ' + JSON.stringify(notification));
+                        var feed = {
+                            'title': notification.payload.title,
+                            'message': notification.payload.message,
+                            'link': notification.payload.url
+                        };
+                        $rootScope.$broadcast('refreshFeeds', feed);
+
+                        window.open(notification.payload.url, '_blank', 'location=yes', 'closebuttoncaption=Done');
+
                         break;
 
                     case 'error':

@@ -25,6 +25,10 @@ angular.module('starter.controllers', [])
         $scope.goIdealDhakaFbPage = function() {
             window.open(Commons.getIdealDhakaFbUrl(), '_system', 'location=yes', 'closebuttoncaption=Done');
         };
+
+        $scope.goIdealDhakaBlog = function() {
+            window.open(Commons.getBlogUrl(), '_blank', 'location=yes', 'closebuttoncaption=Done');
+        };
     })
 
     .controller('DashboardCtrl', function ($scope, $stateParams, Feeds) {
@@ -33,11 +37,16 @@ angular.module('starter.controllers', [])
         $scope.doRefresh = function() {
             $scope.entries = Feeds.all();
             $scope.$broadcast('scroll.refreshComplete');
-        }
+        };
 
         $scope.openUrl = function(feedUrl){
             window.open(feedUrl, '_blank', 'location=no', 'closebuttoncaption=Done');
-        }
+        };
+
+        $scope.$on('refreshFeeds', function (event, feed) {
+            Feeds.addFeed(feed);
+            $scope.doRefresh();
+        });
     })
 
     .controller('DccNorthCtrl', function ($scope, $stateParams) {
